@@ -8,7 +8,12 @@ public class ConfigServiceImpl extends ConfigurationServiceGrpc.ConfigurationSer
     private Map<String, String> configMap = new HashMap<>();
 
     @Override public void call(ConfigurationRequest request, StreamObserver<ConfigurationResponse> responseObserver) {
-        super.call(request, responseObserver);
+        ConfigurationResponse.Builder builder = ConfigurationResponse.newBuilder();
+        configMap.forEach((key, value) -> {
+            builder.addConfigTable(Config.newBuilder().setName(key).setValue(value).build());
+        });
+        responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
     }
 
     public void put(String key, String value) {
