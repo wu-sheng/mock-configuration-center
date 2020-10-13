@@ -11,7 +11,7 @@
         <compiler.version>1.8</compiler.version>
         <powermock.version>1.6.4</powermock.version>
         <checkstyle.version>6.18</checkstyle.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <mockito-all.version>1.10.19</mockito-all.version>
         <maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
         <maven-resource-plugin.version>3.1.0</maven-resource-plugin.version>
